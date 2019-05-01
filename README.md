@@ -1,5 +1,7 @@
 # SCIM-node
 
+NOTE: This is a re-upload of the original npm package scim-node. The original npm package was out of date with the git repository. All credit beyond the upload of the current git repo to npm belongs to the original developers. 
+
 SCIM node is a client library for the Gluu SCIM 2.0. For information about SCIM 2.0, visit <https://gluu.org/docs/api/scim-2.0/>
 There are two scim for dealing with UMA 1.0 and UMA 2.0.
 
@@ -21,7 +23,7 @@ scim.scim2.getUsersCount(callback);
 
 Install scim-node using following command:
 ```sh
-$ npm install scim-node
+$ npm install scim2-node
 ```
 
 **Prerequisite**
@@ -154,6 +156,25 @@ scim.scim2.removeUser(id, callback);
 |-------------|----------------------|----------------|
 | default     | successful operation | -              |
 | error_code  | failed operation     | Error          |
+
+### 6) editUser
+To update existing user in SCIM.  
+'userSampleData' can be object or json ('username' attribute is required. 'meta' attribute is readonly).  
+Full structure of 'userSampleData' is specified in example.js file. 
+
+**Request:**
+
+```javascript
+scim.scim2.editUser(id, userSampleData, callback);
+```
+
+**Response:**
+
+| Status Code | Reason               | Response Model |
+|-------------|----------------------|----------------|
+| 201         | successful operation | User           |
+| error_code  | failed operation     | Error          |
+
 
 # License
 
